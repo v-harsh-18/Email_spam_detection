@@ -1,0 +1,84 @@
+svg.radial-progress {
+    height: auto;
+    max-width: 400px;
+    padding: 1em;
+    transform: rotate(-90deg);
+    width: 100%;
+  }
+  
+  svg.radial-progress circle {
+    fill: rgba(0,0,0,0);
+    stroke: var(--intext)!important;
+    stroke-dashoffset: 219.91148575129; 
+    stroke-width: 10;
+  }
+  
+  svg.radial-progress circle.incomplete { opacity: 0.25; }
+  
+  svg.radial-progress circle.complete { stroke-dasharray: 219.91148575129; }
+  
+  svg.radial-progress text {
+    fill: var(--clocktext);
+    text-anchor: middle;
+  }
+
+  .panel0{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    height:40rem ;
+    /* background-image: url("../img/collage.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    margin: 0px;
+    padding-top: 34px;
+    text-align: center;
+}
+
+.percentage{
+  color:var(--clocktext);
+}
+
+.ftext{
+  margin-left:2rem
+
+}
+
+
+:root{
+  --black: #000000;
+  --white: #ffffff;
+  --minty: rgb(46,150, 211);
+  --nminty: #008080;
+  --grey: #212529;
+  --lightgrey: grey ;
+  --lsblack: rgba(0,0,0,0.15);
+  --dswhite:rgba(255, 245, 245, 0.15);
+   
+}
+
+body[data-theme='light'] {
+  --navigationbg: var(--white);
+  --intext: var(--minty);
+  --clocktext: var(--black);
+  --panellogos: var(--minty);
+  --ftext: var(--black);
+  --copyright: var(--black);
+  --ldshadow: var(--lsblack);
+}
+
+body[data-theme='dark'] {
+  --navigationbg: var(--black);
+  --intext: var(--nminty);
+  --clocktext: var(--white);
+  --panellogos: var(--nminty);
+  --ftext: var(--white);
+  --copyright: var(--lightgrey);
+  --ldshadow: var(--dswhite);
+}
+
+* {
+  transition: background-color 0.3s ease, color 1s ease;
+}
+
