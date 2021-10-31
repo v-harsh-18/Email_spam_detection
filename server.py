@@ -43,14 +43,11 @@ dataframe['EmailText'].head().apply(process_text)
 # Convert a collection of text to a matrix of tokens(tokenization)
 messages_bow = CountVectorizer(analyzer = process_text).fit_transform(dataframe['EmailText'])
 
-# Spliting the data into train and test data
-X_train, X_test, y_train, y_test = train_test_split(messages_bow, dataframe['Label'], test_size=0.20, random_state=42)
-
 #print(messages_bow.shape)
 
 # Create and train the Naive Bayes CLassifier
 
-classifier = MultinomialNB().fit(X_train, y_train)
+classifier = MultinomialNB().fit(messages_bow, dataframe['Label'])
 
 
 # Evaluate the model on the training data set
@@ -61,7 +58,12 @@ def index():
 
 @app.route('/emotion', methods=['GET'])
 def emotion():
-    pred = classifier.predict(['ham','Had your mobile 11 months or more? U R entitled to Update to the latest colour mobiles with camera for Free! Call The Mobile Update Co FREE on 08002986030'])
+    example= 'Had your mobile 11 months or more? U R entitled to Update to the latest colour mobiles with camera for Free! Call The Mobile Update Co FREE on 08002986030'
+    example.apply(process_text)
+
+    example_bow = CountVectorizer(analyzer = process_text).fit_transform(example) 
+
+    pred = classifier.predict(example_bow)
     print(pred)
 
     return('hello')
