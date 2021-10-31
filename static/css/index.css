@@ -253,6 +253,7 @@ footer{
     justify-content: center;
     align-items:center;
     margin-bottom:4rem;
+    flex-direction: column;
 }
 
 .col-12{
@@ -271,6 +272,12 @@ footer{
 }
 .gin{
     margin:3rem;
+}
+
+.btn{
+    color: #fff;
+    background-color: var(--intext)!important;
+    border-color: var(--intext)!important;
 }
 
 .btn-primary {

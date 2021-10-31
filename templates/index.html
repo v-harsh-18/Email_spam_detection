@@ -87,20 +87,19 @@
             </div>
         </div>
     </div>
-    <div id="form">
-        <form method="POST" action="/emotion">
-            <div class="col">
-                <label for="inputPassword4" class="form-label">Failing to judge your current mood? Just enter what you feel to judge ur emotions !!!</label>
-                <input type="text" class="form-control" name="emotion">
+    <div class="form">
+        <form action="/email" method="POST" id="form" enctype="multipart/form-data">
+
+              <div class="input-group mb-3">
+                <button type="button" class="btn btn-info">CSV File</button>
+                <input type="file" class="form-control" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" aria-label="Upload" required name="csv" />
               </div>
               <div class="col-12">
-                  <div>
-                <button type="submit" class="btn btn-primary">Let's Go !!</button>
-            </div>
+                <button type="submit" class="btn btn-primary enter">Click and find accuracy of the model</button>
               </div>
-
-        </form>
-    </div>
+          </form>
+        </div>
+          
 
     </div>
     

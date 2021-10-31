@@ -6,6 +6,7 @@ import string
 
 #Read the csv file
 dataframe = pd.read_csv('spam.csv')
+print(dataframe[0])
 
 # Remove duplicates
 dataframe.drop_duplicates(inplace = True)
@@ -38,6 +39,8 @@ messages_bow = CountVectorizer(analyzer = process_text).fit_transform(dataframe[
 # Spliting the data into train and test data
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(messages_bow, dataframe['Label'], test_size=0.20, random_state=42)
+
+print(dataframe['Label'])
 
 #print(messages_bow.shape)
 
